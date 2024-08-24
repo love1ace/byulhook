@@ -16,19 +16,16 @@ commit-msg:
   commands:
     byulFormat:
       run: "node ./node_modules/byul/dist/index.js .git/COMMIT_EDITMSG"
+# pre-commit:
+#    commands:
+#      lint:
+# #        run: npx run lint" && npx prettier --write ."
 
+#       #  npm i eslint, prettier, byulForamt
 
-pre-commit:
-   commands:
-     lint:
-       run: npx run lint" && npx prettier --write ."
+#       #  eslint.cjs
+#       #  eslint-plugin-prettier
+#       #  eslint-config-prettier
+#       #  prettier.rc
 
-
-       npm i eslint, prettier, byulForamt
-       
-       eslint.cjs
-       eslint-plugin-prettier
-       eslint-config-prettier
-       prettier.rc
-       
-       2시간 -> 15초
+#        2시간 -> 15초

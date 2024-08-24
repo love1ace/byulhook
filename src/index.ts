@@ -1,23 +1,24 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as YAML from 'yaml';
-import { execSync } from 'child_process';
-import { getHooksPath } from './utils.js';
+import * as fs from "fs";
+import * as path from "path";
+import * as YAML from "yaml";
+import { execSync } from "child_process";
+import { getHooksPath } from "./utils.js";
 
+// 목적: Git 훅을 설치하고 설정합니다.
 export function installHooks() {
   try {
     const hooksDir = getHooksPath();
-    const configPath = path.resolve(process.cwd(), 'byulhook.yml');
+    const configPath = path.resolve(process.cwd(), "byulhook.yml");
 
     if (!fs.existsSync(configPath)) {
-      console.error('Error: byulhook.yml not found.');
+      console.error("Error: byulhook.yml not found.");
       process.exit(1);
     }
 
     const config = loadConfig(configPath);
     const hooks = Object.keys(config);
 
-    hooks.forEach(hook => {
+    hooks.forEach((hook) => {
       const hookPath = path.join(hooksDir, hook);
       const samplePath = `${hookPath}.sample`;
 
@@ -31,13 +32,19 @@ export function installHooks() {
 
       let script = `#!/bin/sh\n`;
 
-      let existingScript = '';
+      let existingScript = "";
       if (fs.existsSync(hookPath)) {
         try {
-          existingScript = fs.readFileSync(hookPath, 'utf8');
+          existingScript = fs.readFileSync(hookPath, "utf8");
 
-          if (existingScript.includes(`# byulhook\nnpx byulhook ${hook}\n# byulhook\n`)) {
-            console.log(`Hook ${hook} already contains byulhook script, skipping...`);
+          if (
+            existingScript.includes(
+              `# byulhook\nnpx byulhook ${hook}\n# byulhook\n`
+            )
+          ) {
+            console.log(
+              `Hook ${hook} already contains byulhook script, skipping...`
+            );
             return;
           }
 
@@ -60,11 +67,12 @@ export function installHooks() {
   }
 }
 
+// 목적: 특정 Git 훅에 정의된 명령어들을 실행합니다.
 function runHookCommand(hookName: string) {
-  const configPath = path.resolve(process.cwd(), 'byulhook.yml');
+  const configPath = path.resolve(process.cwd(), "byulhook.yml");
 
   if (!fs.existsSync(configPath)) {
-    console.error('Error: byulhook.yml not found.');
+    console.error("Error: byulhook.yml not found.");
     process.exit(1);
   }
 
@@ -76,7 +84,7 @@ function runHookCommand(hookName: string) {
       const command = commands[commandName].run;
       if (command) {
         console.log(`Running ${hookName} command: ${command}`);
-        execSync(command, { stdio: 'inherit' });
+        execSync(command, { stdio: "inherit" });
       }
     }
   } else {
@@ -84,13 +92,14 @@ function runHookCommand(hookName: string) {
   }
 }
 
+// 목적: YAML 형식의 설정 파일을 읽고 파싱합니다.
 function loadConfig(configPath: string) {
   try {
     if (!fs.existsSync(configPath)) {
       console.error(`Error: Configuration file not found at ${configPath}`);
       return null;
     }
-    const fileContent = fs.readFileSync(configPath, 'utf8');
+    const fileContent = fs.readFileSync(configPath, "utf8");
     return YAML.parse(fileContent);
   } catch (err) {
     console.error(`Failed to load configuration: ${err}`);
@@ -100,8 +109,8 @@ function loadConfig(configPath: string) {
 
 const command = process.argv[2];
 
-if (command === 'install' || command === 'add') {
+if (command === "install" || command === "add") {
   installHooks();
-} else if (command === 'commit-msg' || command === 'pre-commit') {
+} else if (command === "commit-msg" || command === "pre-commit") {
   runHookCommand(command);
 }

@@ -1,0 +1,48 @@
+{
+  "name": "byulhook",
+  "version": "0.1.0",
+  "description": "An intuitive tool for effortlessly managing Git hooks with speed and efficiency..",
+  "main": "dist/bin/byulhook.js",
+  "bin": {
+    "byulhook": "./dist/bin/byulhook.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "author": "love1ace <lovelacedud@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byulhook/byulhook.git"
+  },
+  "keywords": [
+    "husky",
+    "lefthook",
+    "git hooks",
+    "git",
+    "love1ace",
+    "byul",
+    "byulhook"
+  ],
+  "bugs": {
+    "url": "https://github.com/byulhook/byulhook/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/byulhook/byulhook#readme",
+  "dependencies": {
+    "byul": "^1.2.9",
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "@types/yaml": "^1.9.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "preinstall": "npm run build"
+  }
+}

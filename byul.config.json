@@ -1,0 +1,5 @@
+{
+  "byulFormat": "{type}: {commitMessage} (#{issueNumber})"
+
+}
+

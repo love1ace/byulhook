@@ -1,7 +1,7 @@
 {
   "name": "byulhook",
   "version": "0.1.0",
-  "description": "An intuitive tool for effortlessly managing Git hooks with speed and efficiency..",
+  "description": "An intuitive tool for effortlessly managing Git hooks with speed and efficiency",
   "main": "dist/bin/byulhook.js",
   "bin": {
     "byulhook": "./dist/bin/byulhook.js"
@@ -17,7 +17,6 @@
     "husky",
     "lefthook",
     "git hooks",
-    "git",
     "love1ace",
     "byul",
     "byulhook"
@@ -42,7 +41,6 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "build": "tsc",
-    "preinstall": "npm run build"
+    "build": "tsc"
   }
 }

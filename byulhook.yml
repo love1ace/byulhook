@@ -16,10 +16,3 @@ commit-msg:
   commands:
     byulFormat:
       run: "node ./node_modules/byul/dist/index.js .git/COMMIT_EDITMSG"
-
-pre-commit:
-  commands:
-    lint:
-      run: "echo 'Linting code before commit...'"
-    test:
-      run: "echo 'Running tests before commit...'"

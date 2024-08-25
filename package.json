@@ -1,6 +1,6 @@
 {
   "name": "byulhook",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "An intuitive tool for effortlessly managing Git hooks with speed and efficiency",
   "main": "dist/bin/byulhook.js",
   "bin": {
@@ -31,7 +31,6 @@
   ],
   "homepage": "https://github.com/byulhook/byulhook#readme",
   "dependencies": {
-    "byul": "^1.2.9",
     "yaml": "^2.5.0"
   },
   "devDependencies": {

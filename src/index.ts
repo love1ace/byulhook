@@ -148,13 +148,13 @@ function runHookCommand(hookName: string) {
     console.log("\x1b[33m╰──────────────────────────────────────────────╯\x1b[0m");
     console.log();
     console.log(` ✅  Hook: ${hookName} `);
-    console.log();
 
     for (const commandName in commands) {
       const commandObj = commands[commandName];
       const command = commandObj.run;
 
       if (command) {
+        console.log();
         console.log(`\x1b[32m\x1b[1m┃ ${commandName} > \x1b[0m`);
         try {
           console.log(`\x1b[32m─────────────────────────────────────────────\x1b[0m`);

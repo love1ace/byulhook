@@ -6,37 +6,36 @@ import { getHooksPath } from "./utils.js";
 
 const allGitHooks = [
   // Client-side hooks
-  "applypatch-msg",       // 패치 메시지를 준비한 후 호출
-  "pre-applypatch",       // 패치를 적용하기 전에 호출
-  "post-applypatch",      // 패치가 적용된 후 호출
-  "pre-commit",           // 커밋을 만들기 전에 호출
-  "prepare-commit-msg",   // 커밋 메시지를 준비하기 전에 호출
-  "commit-msg",           // 커밋 메시지가 입력된 후 호출
-  "post-commit",          // 커밋이 완료된 후 호출
-  "pre-rebase",           // 리베이스하기 전에 호출
-  "post-checkout",        // 체크아웃 후에 호출
-  "post-merge",           // 병합 후에 호출
-  "pre-push",             // 원격으로 푸시하기 전에 호출
-  "fsmonitor-watchman",   // 작업 디렉토리의 변경 사항을 감시하기 위해 호출
-  "p4-changelist",        // 퍼포스(P4)에서 changelist가 생성되기 전에 호출
-  "p4-prepare-changelist",// 퍼포스(P4)에서 changelist가 준비된 후 호출
-  "p4-post-changelist",   // 퍼포스(P4)에서 changelist가 적용된 후 호출
-  "p4-pre-submit",        // 퍼포스(P4)에서 변경 사항을 제출하기 전에 호출
-  "post-index-change",    // 인덱스 파일이 변경된 후에 호출
+  "applypatch-msg",       // Called after a patch message is prepared
+  "pre-applypatch",       // Called before a patch is applied
+  "post-applypatch",      // Called after a patch is applied
+  "pre-commit",           // Called before a commit is made
+  "prepare-commit-msg",   // Called before the commit message is prepared
+  "commit-msg",           // Called after the commit message is entered
+  "post-commit",          // Called after a commit is completed
+  "pre-rebase",           // Called before a rebase
+  "post-checkout",        // Called after a checkout
+  "post-merge",           // Called after a merge
+  "pre-push",             // Called before a push to a remote
+  "fsmonitor-watchman",   // Called to monitor changes in the working directory
+  "p4-changelist",        // Called before a changelist is created in Perforce (P4)
+  "p4-prepare-changelist",// Called after a changelist is prepared in Perforce (P4)
+  "p4-post-changelist",   // Called after a changelist is applied in Perforce (P4)
+  "p4-pre-submit",        // Called before changes are submitted in Perforce (P4)
+  "post-index-change",    // Called after the index file is changed
 
   // Server-side hooks
-  "pre-receive",          // 푸시된 데이터를 처리하기 전에 호출
-  "update",               // 푸시된 데이터가 각 참조를 업데이트할 때 호출
-  "post-receive",         // 푸시된 데이터가 처리된 후 호출
-  "post-update",          // 푸시된 데이터가 업데이트된 후 호출
-  "reference-transaction",// 참조 트랜잭션의 시작과 끝에 호출
-  "push-to-checkout",     // 푸시 후 작업 트리의 업데이트를 처리
-  "pre-auto-gc",          // 자동 가비지 컬렉션이 시작되기 전에 호출
-  "post-rewrite",         // `git commit --amend` 및 `git rebase` 후에 호출
-  "sendemail-validate"    // `git send-email`에서 호출되어 수신자의 유효성을 검사
+  "pre-receive",          // Called before processing pushed data
+  "update",               // Called when updating each ref with pushed data
+  "post-receive",         // Called after pushed data is processed
+  "post-update",          // Called after pushed data is updated
+  "reference-transaction",// Called at the beginning and end of a reference transaction
+  "push-to-checkout",     // Called to handle updates to the working tree after a push
+  "pre-auto-gc",          // Called before automatic garbage collection starts
+  "post-rewrite",         // Called after `git commit --amend` and `git rebase`
+  "sendemail-validate"    // Called to validate recipients in `git send-email`
 ];
 
-// 목적: Git 훅을 설치하고 설정합니다.
 export function installHooks() {
   try {
     const hooksDir = getHooksPath();
@@ -51,7 +50,6 @@ export function installHooks() {
 
     const hooks = Object.keys(config);
 
-    // 모든 훅 파일을 검사하여 설정된 훅을 제외한 훅에서 byulhook 코드를 삭제
     const allHooks = fs.readdirSync(hooksDir);
     allHooks.forEach((hookFile) => {
       const hookPath = path.join(hooksDir, hookFile);
@@ -64,7 +62,6 @@ export function installHooks() {
 
         if (updatedScript !== existingScript) {
           fs.writeFileSync(hookPath, updatedScript, { mode: 0o755 });
-          // 삭제된 훅에 대한 로그 출력
           console.log(`┌─────────────────────────────────────────────────┐`);
           console.log(`│ ❌  (Removed) Hook: ${hookFile.padEnd(28)} │`);
           console.log(`└─────────────────────────────────────────────────┘`);
@@ -72,7 +69,6 @@ export function installHooks() {
       }
     });
 
-    // byulhook.yml이 비어 있거나 훅이 없는 경우에도 삭제 로직이 작동하도록 추가
     if (hooks.length === 0) {
       return;
     }
@@ -119,7 +115,6 @@ export function installHooks() {
 
       try {
         fs.writeFileSync(hookPath, script, { mode: 0o755 });
-
         console.log(`┌─────────────────────────────────────────────────┐`);
         console.log(`│ ✅  Hook: ${hook.padEnd(38)} │`);
         console.log(`└─────────────────────────────────────────────────┘`);
@@ -133,7 +128,6 @@ export function installHooks() {
   }
 }
 
-// 목적: 특정 Git 훅에 정의된 명령어들을 실행합니다.
 function runHookCommand(hookName: string) {
   const startTime = Date.now();
 
@@ -201,7 +195,6 @@ function runHookCommand(hookName: string) {
   }
 }
 
-// 목적: YAML 형식의 설정 파일을 읽고 파싱합니다.
 function loadConfig(configPath: string) {
   try {
     if (!fs.existsSync(configPath)) {

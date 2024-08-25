@@ -6,7 +6,7 @@ export function getHooksPath(): string {
 
   if (fs.existsSync(gitConfigPath)) {
     const configContent = fs.readFileSync(gitConfigPath, 'utf8');
-    const match = configContent.match(/core\.hooksPath\s*=\s*(.+)/);
+    const match = configContent.match(/hooksPath\s*=\s*(.+)/);
 
     if (match && match[1]) {
       return path.resolve(process.cwd(), match[1].trim());

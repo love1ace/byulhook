@@ -41,6 +41,7 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "preinstall": "node dist/bin/setup.mjs"
   }
 }

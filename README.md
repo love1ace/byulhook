@@ -1,6 +1,6 @@
-# byul
+# byulhook
 
-**byulhook** is an intuitive tool for effortlessly managing Git hooks with speed and efficiency.
+**byulhook** is a tool for managing Git hooks.
 
 ![npm](https://img.shields.io/npm/v/byulhook)
 ![license](https://img.shields.io/npm/l/byulhook)

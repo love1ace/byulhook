@@ -1,6 +1,6 @@
 {
   "name": "byulhook",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Tool for managing Git hooks",
   "main": "dist/bin/byulhook.js",
   "bin": {

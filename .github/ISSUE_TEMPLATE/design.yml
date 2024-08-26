@@ -1,0 +1,28 @@
+name: 🎨 design
+description: Do you have UI design changes or CSS updates?
+title: "[design] "
+labels: ["🎨 design"]
+body:
+  - type: textarea
+    id: design-description
+    attributes:
+      label: 📄 Description
+      description: Please describe the design or CSS changes.
+      placeholder: Provide detailed description!
+    validations:
+      required: true
+  - type: textarea
+    id: design-tasks
+    attributes:
+      label: ✅ Tasks
+      description: Please list the tasks that need to be done.
+      placeholder: Break them down as much as possible!
+    validations:
+      required: true
+  - type: textarea
+    id: design-notes
+    attributes:
+      label: 📝 Notes
+      description: Any additional notes?
+    validations:
+      required: false

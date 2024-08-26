@@ -1,0 +1,28 @@
+name: 🛠 chore
+description: Do you have miscellaneous tasks or minor updates?
+title: "[chore] "
+labels: ["🛠 chore"]
+body:
+  - type: textarea
+    id: chore-description
+    attributes:
+      label: 📄 Description
+      description: Please describe the chore or minor update.
+      placeholder: Provide detailed description!
+    validations:
+      required: true
+  - type: textarea
+    id: chore-tasks
+    attributes:
+      label: ✅ Tasks
+      description: Please list the tasks that need to be done.
+      placeholder: Break them down as much as possible!
+    validations:
+      required: true
+  - type: textarea
+    id: chore-notes
+    attributes:
+      label: 📝 Notes
+      description: Any additional notes?
+    validations:
+      required: false

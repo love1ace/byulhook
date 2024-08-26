@@ -1,0 +1,28 @@
+name: ✏️ rename
+description: Are you renaming or moving files?
+title: "[rename] "
+labels: ["✏️ rename"]
+body:
+  - type: textarea
+    id: rename-description
+    attributes:
+      label: 📄 Description
+      description: Please describe the files or directories being renamed or moved.
+      placeholder: Provide detailed description!
+    validations:
+      required: true
+  - type: textarea
+    id: rename-tasks
+    attributes:
+      label: ✅ Tasks
+      description: Please list the tasks that need to be done.
+      placeholder: Break them down as much as possible!
+    validations:
+      required: true
+  - type: textarea
+    id: rename-notes
+    attributes:
+      label: 📝 Notes
+      description: Any additional notes?
+    validations:
+      required: false

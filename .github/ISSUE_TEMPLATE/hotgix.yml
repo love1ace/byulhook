@@ -1,0 +1,28 @@
+name: 🚑 hotfix
+description: Do you have an urgent bug fix that needs to be merged into the main branch immediately?
+title: "[hotfix] "
+labels: ["🚑 hotfix"]
+body:
+  - type: textarea
+    id: hotfix-description
+    attributes:
+      label: 📄 Description
+      description: Please describe the urgent bug and the fix.
+      placeholder: Provide detailed description!
+    validations:
+      required: true
+  - type: textarea
+    id: hotfix-tasks
+    attributes:
+      label: ✅ Tasks
+      description: Please list the tasks that need to be done.
+      placeholder: Break them down as much as possible!
+    validations:
+      required: true
+  - type: textarea
+    id: hotfix-notes
+    attributes:
+      label: 📝 Notes
+      description: Any additional notes?
+    validations:
+      required: false

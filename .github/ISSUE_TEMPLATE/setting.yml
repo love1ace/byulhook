@@ -1,0 +1,28 @@
+name: ⚙️ setting
+description: Are you making project configuration changes?
+title: "[setting] "
+labels: ["⚙️ setting"]
+body:
+  - type: textarea
+    id: setting-description
+    attributes:
+      label: 📄 Description
+      description: Please describe the configuration changes.
+      placeholder: Provide detailed description!
+    validations:
+      required: true
+  - type: textarea
+    id: setting-tasks
+    attributes:
+      label: ✅ Tasks
+      description: Please list the tasks that need to be done.
+      placeholder: Break them down as much as possible!
+    validations:
+      required: true
+  - type: textarea
+    id: setting-notes
+    attributes:
+      label: 📝 Notes
+      description: Any additional notes?
+    validations:
+      required: false

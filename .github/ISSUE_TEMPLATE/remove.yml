@@ -1,0 +1,28 @@
+name: 🗑️ remove
+description: Are you deleting files?
+title: "[remove] "
+labels: ["🗑️ remove"]
+body:
+  - type: textarea
+    id: remove-description
+    attributes:
+      label: 📄 Description
+      description: Please describe the files that are being removed.
+      placeholder: Provide detailed description!
+    validations:
+      required: true
+  - type: textarea
+    id: remove-tasks
+    attributes:
+      label: ✅ Tasks
+      description: Please list the tasks that need to be done.
+      placeholder: Break them down as much as possible!
+    validations:
+      required: true
+  - type: textarea
+    id: remove-notes
+    attributes:
+      label: 📝 Notes
+      description: Any additional notes?
+    validations:
+      required: false

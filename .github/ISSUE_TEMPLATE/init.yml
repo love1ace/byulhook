@@ -1,7 +1,7 @@
-name: 🚀 init
+name: init
 description: Is this the initial setup or creation of the project?
 title: "[init] "
-labels: ["🚀 init"]
+labels: ["init"]
 body:
   - type: textarea
     id: init-description

@@ -1,7 +1,7 @@
-name: ⚙️ setting
+name: setting
 description: Are you making project configuration changes?
 title: "[setting] "
-labels: ["⚙️ setting"]
+labels: ["setting"]
 body:
   - type: textarea
     id: setting-description

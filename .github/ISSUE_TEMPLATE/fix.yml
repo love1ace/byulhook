@@ -1,7 +1,7 @@
-name: 🐛 fix
+name: fix
 description: Do you have a bug fix?
 title: "[fix] "
-labels: ["🐛 fix"]
+labels: ["fix"]
 body:
   - type: textarea
     id: fix-description

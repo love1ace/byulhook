@@ -1,7 +1,7 @@
-name: 🎨 style
+name: style
 description: Are you making code style changes?
 title: "[style] "
-labels: ["🎨 style"]
+labels: ["style"]
 body:
   - type: textarea
     id: style-description

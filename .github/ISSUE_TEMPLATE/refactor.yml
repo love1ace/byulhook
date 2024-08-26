@@ -1,7 +1,7 @@
-name: 🔨 refactor
+name: refactor
 description: Do you have code refactoring that does not alter behavior?
 title: "[refactor] "
-labels: ["🔨 refactor"]
+labels: ["refactor"]
 body:
   - type: textarea
     id: refactor-description

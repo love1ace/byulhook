@@ -1,7 +1,7 @@
-name: ✏️ rename
+name: rename
 description: Are you renaming or moving files?
 title: "[rename] "
-labels: ["✏️ rename"]
+labels: ["rename"]
 body:
   - type: textarea
     id: rename-description

@@ -1,7 +1,7 @@
-name: 🚑 hotfix
+name: hotfix
 description: Do you have an urgent bug fix that needs to be merged into the main branch immediately?
 title: "[hotfix] "
-labels: ["🚑 hotfix"]
+labels: ["hotfix"]
 body:
   - type: textarea
     id: hotfix-description

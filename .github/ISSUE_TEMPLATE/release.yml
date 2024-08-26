@@ -1,7 +1,7 @@
-name: 🚀 release
+name: release
 description: Are you releasing or deploying the project?
 title: "[release] "
-labels: ["🚀 release"]
+labels: ["release"]
 body:
   - type: textarea
     id: release-description

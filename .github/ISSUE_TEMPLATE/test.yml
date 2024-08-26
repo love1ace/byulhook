@@ -1,7 +1,7 @@
-name: 🧪 test
+name: test
 description: Are you adding or modifying tests?
 title: "[test] "
-labels: ["🧪 test"]
+labels: ["test"]
 body:
   - type: textarea
     id: test-description

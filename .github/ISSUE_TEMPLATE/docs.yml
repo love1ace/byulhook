@@ -1,7 +1,7 @@
-name: 📝 docs
+name: docs
 description: Do you have documentation updates?
 title: "[docs] "
-labels: ["📝 docs"]
+labels: ["docs"]
 body:
   - type: textarea
     id: docs-description

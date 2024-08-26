@@ -1,7 +1,7 @@
-name: 🎨 design
+name: design
 description: Do you have UI design changes or CSS updates?
 title: "[design] "
-labels: ["🎨 design"]
+labels: ["design"]
 body:
   - type: textarea
     id: design-description

@@ -1,7 +1,7 @@
-name: 🗑️ remove
+name: remove
 description: Are you deleting files?
 title: "[remove] "
-labels: ["🗑️ remove"]
+labels: ["remove"]
 body:
   - type: textarea
     id: remove-description

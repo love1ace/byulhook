@@ -1,7 +1,7 @@
-name: 🛠 chore
+name: chore
 description: Do you have miscellaneous tasks or minor updates?
 title: "[chore] "
-labels: ["🛠 chore"]
+labels: ["chore"]
 body:
   - type: textarea
     id: chore-description

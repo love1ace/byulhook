@@ -32,7 +32,29 @@ pnpm add byulhook
 ```bash
 bun add byulhook
 ```
+## Setup error
+If the `byulhook.yml` file hasn’t been created, run:
+```bash
+node node_modules/byul-alias/dist/bin/setup.mjs
+```
+Or, you can manually create the `byulhook.yml` file and add this code:
 
+```yaml
+# hook name:
+#   This is the name of the Git hook, such as 'pre-commit', 'commit-msg', etc.
+#   commands:
+#     command name:
+#       A user-defined name for the command. This can be any descriptive name you choose.
+#       run: 'command to run'
+#       The shell command or script that will be executed when the hook is triggered.
+#
+# Example:
+#
+# pre-commit:
+#   commands:
+#     lint:
+#       run: 'npm run lint'
+```
 ## Usage
 
 ### Define Your Git Hooks
